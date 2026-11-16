@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #f1f5f9; color: #0f172a; }
+.section-card { display: flex; gap: 24px; align-items: flex-start; background: #fff; border-radius: 16px;
+  padding: 24px 28px; margin: 16px auto; max-width: 1100px; box-shadow: 0 4px 14px #0f172a14;
+  border-left: 6px solid var(--accent, #2563eb); }
+.section-card > div:last-child { flex: 1; }
+.section-card h2 { margin: 0 0 12px; color: #15396b; }
+.icon { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
+  font-size: 28px; background: #eaf1fb; flex: none; }
+.accent-blue { --accent: #2563eb; } .accent-green { --accent: #16a34a; }
+.accent-orange { --accent: #f59e0b; } .accent-teal { --accent: #0f766e; } .accent-purple { --accent: #7c3aed; }

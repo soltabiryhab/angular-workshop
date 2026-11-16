@@ -1,0 +1,15 @@
+<section class="section-card accent-orange">
+  <div class="icon">🔔</div>
+  <div>
+    <h2>Zone de notifications</h2>
+    <p>Vous avez {{ count }} nouvelles notifications.</p>
+    <button (click)="toggle()">{{ show ? 'Masquer' : 'Afficher' }} les notifications</button>
+    @if (show) {
+      <ul>
+        @for (m of messages; track m) {
+          <li>{{ m }}</li>
+        }
+      </ul>
+    }
+  </div>
+</section>

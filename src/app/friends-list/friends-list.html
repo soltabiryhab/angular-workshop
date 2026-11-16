@@ -1,0 +1,14 @@
+<section class="section-card accent-green">
+  <div class="icon">👥</div>
+  <div>
+    <h2>Liste des amis</h2>
+    <input [(ngModel)]="name" />
+    <input [(ngModel)]="name" />
+    <input [(ngModel)]="name" />
+    <ul>
+      @for (f of friends; track f) {
+        <li>{{ f }}</li>
+      }
+    </ul>
+  </div>
+</section>

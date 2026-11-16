@@ -1,0 +1,5 @@
+<nav class="nav">
+  @for (link of links; track link) {
+    <a href="#" [class.active]="link === active" (click)="select(link); $event.preventDefault()">{{ link }}</a>
+  }
+</nav>

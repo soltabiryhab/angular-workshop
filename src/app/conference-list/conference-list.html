@@ -1,0 +1,32 @@
+<section class="section-card accent-teal">
+  <div class="icon">📅</div>
+  <div>
+    <h2>Liste des conférences à venir</h2>
+    <p class="hint">Cliquez sur une conférence pour afficher ses détails.</p>
+    <input class="search" type="text" placeholder="Taper le titre de la conférence" [(ngModel)]="searchTerm" />
+
+    @if (conferences.length === 0) {
+      <p class="empty">Aucune conférence enregistrée.</p>
+    } @else if (upcoming.length === 0) {
+      <p class="empty">Aucune conférence à venir ne correspond à votre recherche.</p>
+    } @else {
+      <div class="grid">
+        @for (c of upcoming; track c.id) {
+          @let left = c.maxParticipants - c.nbParticipants;
+          <article class="conf">
+            <h3>{{ c.title | uppercase }}</h3>
+            <p><strong>Date :</strong> {{ c.date | date: 'dd/MM/yyyy' }}</p>
+            <p><strong>Lieu :</strong> {{ c.place }}</p>
+            <p><strong>Places restantes :</strong> {{ left }}</p>
+            <button
+              class="btn"
+              [ngClass]="{ 'btn-green': left >= 10, 'btn-orange': left > 0 && left < 10, 'btn-red': left === 0 }"
+              (click)="register(c)">
+              S'inscrire
+            </button>
+          </article>
+        }
+      </div>
+    }
+  </div>
+</section>
